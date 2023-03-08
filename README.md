@@ -1,1 +1,1 @@
-# This repository contains projects made with javascript
+# This repository contains projects made with javascript.
