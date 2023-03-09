@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script src="0-script.js"></script> -->
+    <button onclick="displayDate()">Date</button>
+    <p id="demo"></p>
+    <script src="1-script.js"></script>
+    <script>
+      // let keyword
+      // variables defined with let cannot be redeclared but can be reassigned
+      let x = "dave";
+      // let x = 0  this cannot be done, but can be done with var
+
+      // variables defined with let have scope block
+      // variables declared with var cannot have block scope
+      // variables defines with var are hoisted to the top and can be defined anytime,
+      // meaning you can use it before it is declared
+      carName = "Volvo";
+      var carName; // this can be done
+
+      // const keyword
+      // variable declared with const keyword cannot be redeclared, reassigned and it has block scope
+      // const z; is not allowed
+      // NB: use const when you declare
+      // 1. A value that cannot be changed
+      // 2. A new array
+      // 3. A new object
+      // 4. A new function
+      // 5. A new RegExp
+      // NB: you can change/update the element of a const array and object
+
+      // DATATYPES
+      // Strings
+      let carName1 = "Benz"; // written in double quotes
+      let carName2 = "Prado"; // or written in single quotes
+
+      // Numbers
+      let x1 = 34.01; // written with decimals
+      let x2 = 43; // or without decimals
+
+      // Exponential Notation
+      let y = 243e5; // 24300000
+      let z = 243e-5; // 0.00243
+
+      // BigInt - numbers more than 64bits
+      let num = BigInt("0123456789012345678901234567890");
+
+      // Booleans
+      let ans1 = true;
+      let ans2 = false;
+
+      // Arrays
+      const cars = ["Saab", "Volvo", "BMW"];
+
+      // Objects
+      const person = {
+        firstName: "John", // property
+        lastName: "Doe", // property
+        age: 50, // property
+        eyeColor: "blue", // property
+        fullName: function () {
+          // fullName is a method
+          return this.firstName + " " + this.lastName;
+        },
+      };
+      // object can be accessed in two ways
+      // 1. person.firstName   or
+      // 2. person["firstName"]
+
+      // Undefined
+      let name; // the variable does not have any value
+
+      // Null
+      let name1 = null;
+
+      // Empty
+      let name2 = "";
+    </script>
+  </body>
+</html>
