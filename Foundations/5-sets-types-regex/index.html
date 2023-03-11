@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--void operator: mostly used used in the href attribute inside an anchor tag-->
+    <!--To evaluate an expression without using the return value. It returns undefined-->
+    <a href="javascript:void(0);">Useless link</a>
+    <a href="javascript:void(document.body.style.backgroundColor='red');"
+      >Turn background color to red</a
+    ><br />
+    <!--Try/catch error-->
+    <input id="demo" type="text" /><br />
+    <button type="button" onclick="func()">Test input</button>
+    <p id="disp"></p>
+    <script>
+      function func() {
+        const message = document.getElementById("disp");
+        message.innerHTML = "";
+        let x = document.getElementById("demo").value;
+        try {
+          if (x.trim() == "") throw "empty";
+          if (isNaN(x)) throw "not a number";
+          x = Number(x);
+          if (x < 5) throw "too low";
+          if (x > 10) throw "too high";
+        } catch (err) {
+          message.innerHTML = "Input is " + err;
+        } finally {
+          document.getElementById("demo").value = "";
+        }
+      }
+      // You can also use HTML validation
+      // <input id="demo" type="number" min="5" max="10" step="1">
+    </script>
+  </body>
+</html>
