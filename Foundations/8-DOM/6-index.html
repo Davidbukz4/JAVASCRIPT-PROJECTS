@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Forms</title>
+    <link rel="stylesheet" href="6-style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="" name="reg-form" autocomplete="on" method="get">
+        <label for="first-name">First Name</label><br />
+        <input
+          type="text"
+          id="first-name"
+          name="first-name"
+          placeholder="Your name..."
+          required
+        /><br />
+        <label for="last-name">Last Name</label><br />
+        <input
+          type="text"
+          id="last-name"
+          name="last-name"
+          placeholder="Your last name..."
+          required
+        /><br />
+        <label for="country">Country</label><br />
+        <select id="country" name="country">
+          <option value="nigeria">Nigeria</option>
+          <option value="france">France</option>
+          <option value="germany">Germany</option></select
+        ><br />
+        <label for="text-box">Profile Summary</label><br />
+        <textarea
+          name="text-box"
+          id="text-box"
+          cols="30"
+          rows="10"
+          placeholder="Write something..."
+          required
+        ></textarea
+        ><br />
+        <input type="submit" class="submit-btn" />
+      </form>
+    </div>
+    <script src="7-script.js"></script>
+  </body>
+</html>
