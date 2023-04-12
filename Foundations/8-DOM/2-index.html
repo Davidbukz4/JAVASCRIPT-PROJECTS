@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #elem1 {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="elem1"><strong>Color</strong> test</p>
+    <p id="elem2">One Two Three <strong>Four</strong></p>
+    <p id="elem3" name="hello">Hello <span>World</span></p>
+    <script>
+      document.getElementById("elem1").style.color = "red";
+      document.getElementsByTagName("p").value = "asdf";
+      // gets the value of an element
+      let val = document.getElementsByTagName("p").value;
+      console.log(val);
+      // to get the content of an element
+      // innerHTML - get the text and the html elements inside the tag
+      val = document.getElementById("elem1").innerHTML;
+      console.log("innerHTML => " + val);
+      // textContent - gets the text content of an html element
+      val = document.getElementById("elem1").textContent;
+      console.log("textContent => " + val);
+      // innerText - get the text
+      val = document.getElementById("elem1").innerText;
+      console.log("innerText => " + val);
+      // get the computed style for an element
+      var elem = document.getElementById("elem1");
+      var style = window.getComputedStyle(elem1);
+      console.log(style.color);
+      // nodeValue
+      var textNode = document.getElementById("elem2").firstChild;
+      console.log(textNode);
+      //   textNode.nodeValue = "Hi ";
+      textNode.parentNode.removeChild(textNode);
+      console.log(document.getElementById("elem3").getAttribute("name"));
+    </script>
+  </body>
+</html>

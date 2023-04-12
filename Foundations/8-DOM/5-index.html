@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventlistener</title>
+    <style>
+      #div1,
+      #div2 {
+        background-color: coral;
+        padding: 50px;
+      }
+
+      #p1,
+      #p2 {
+        background-color: white;
+        font-size: 20px;
+        border: 1px solid;
+        padding: 20px;
+      }
+      #div3 {
+        background-color: coral;
+        border: 1px solid;
+        padding: 50px;
+        color: white;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">Press me</button>
+    <p id="demo1"></p>
+    <!--Event bubbling and capturing-->
+    <div id="div1">
+      <h2>Bubbling</h2>
+      <p id="p1">Click me</p>
+    </div>
+    <br />
+    <div id="div2">
+      <h2>Capturing</h2>
+      <p id="p2">Click me</p>
+    </div>
+    <br />
+    <div id="div3">
+      When you move your mouse over this field, a random value is generated.
+      <button id="p3" onclick="removeHandler()">Remove it</button>
+    </div>
+    <p id="p4"></p>
+    <script>
+      let x = document.getElementById("btn");
+      x.addEventListener("click", func1);
+      x.addEventListener("click", func2);
+      function func1() {
+        alert("1st function");
+      }
+      function func2() {
+        alert("2nd function");
+      }
+      window.addEventListener("resize", () => {
+        document.getElementById("demo1").innerText = "Window was resized?";
+      });
+      // event bubbling
+      document.getElementById("div1").addEventListener(
+        "click",
+        () => {
+          alert("You clicked the orange element");
+        },
+        false
+      );
+      document.getElementById("p1").addEventListener(
+        "click",
+        () => {
+          alert("You clicked the white element");
+        },
+        false
+      );
+      // event capturing
+      document.getElementById("div2").addEventListener(
+        "click",
+        () => {
+          alert("You clicked the orange element");
+        },
+        true
+      );
+      document.getElementById("p2").addEventListener(
+        "click",
+        () => {
+          alert("You clicked the white element");
+        },
+        true
+      );
+
+      function func3() {
+        document.getElementById("p4").innerText = Math.random();
+      }
+
+      function removeHandler() {
+        document.getElementById("div3").removeEventListener("mousemove", func3);
+      }
+
+      document.getElementById("div3").addEventListener("mousemove", func3);
+    </script>
+  </body>
+</html>

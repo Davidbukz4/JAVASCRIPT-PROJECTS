@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        background-color: #d94a38;
+        width: 90px;
+        height: 20px;
+        padding: 40px;
+      }
+    </style>
+  </head>
+  <body onload="checkCookies()">
+    <p id="demo"></p>
+    <h1 id="date">Click to view date</h1>
+    <input type="text" id="fname" onchange="upperCase()" /><br /><br />
+    <div id="container" onmousedown="mDown(this)" onmouseup="mUp(this)">
+      Mouse over me
+    </div>
+    <script>
+      document.getElementById("date").onclick = displayDate;
+      function displayDate() {
+        document.getElementById("date").textContent = Date();
+      }
+
+      function checkCookies() {
+        let text = "";
+        if (navigator.cookieEnabled == true) {
+          text = "Cookies are enabled";
+        } else {
+          text = "Cookies are not enabled";
+        }
+        document.getElementById("demo").innerText = text;
+      }
+
+      function upperCase() {
+        let val = document.getElementById("fname");
+        val.value = val.value.toUpperCase();
+      }
+
+      function mUp(obj) {
+        obj.innerText = "Thank you";
+        obj.style.background = "#D94A38";
+      }
+
+      function mDown(obj) {
+        obj.innerText = "Release me";
+        obj.style.background = "#1ec5e5";
+      }
+    </script>
+  </body>
+</html>
