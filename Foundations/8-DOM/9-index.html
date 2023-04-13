@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Nodes</title>
+  </head>
+  <body>
+    <div id="div1">
+      <p id="p1">This is a paragraph</p>
+      <p id="p2">This is another paragraph.</p>
+    </div>
+    <p id="p3">This node is removed.</p>
+    <p id="p4">This element was replaced</p>
+    <script>
+      const p = document.createElement("p");
+      const node = document.createTextNode("This is new.");
+      p.appendChild(node);
+      //   document.getElementById("p1").appendChild(p);
+      const child = document.getElementById("p1");
+      // Insert before html element
+      document.getElementById("div1").insertBefore(p, child);
+      // Removing existing html element
+      document.getElementById("p3").remove();
+      // Remove a child node
+      const parent = document.getElementById("div1");
+      //   parent.removeChild(child);
+      // replaceing html elements
+      const child2 = document.getElementById("p2");
+      const rep = document.getElementById("p4");
+      parent.replaceChild(rep, child2);
+    </script>
+  </body>
+</html>

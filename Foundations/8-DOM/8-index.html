@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Navigation</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1 id="h1">H1 element</h1>
+      <p id="p1">P1 element</p>
+      <p id="p2">P2 element</p>
+    </div>
+    <script>
+      let x = document.getElementById("p1").childNodes[0].nodeValue;
+      console.log(x);
+      x = document.body.innerHTML; // to get the html content of the body
+      //   x = document.head.innerHTML; // gets the html content of the head
+      x = document.documentElement.innerHTML; // gets the html content of the file
+      //   console.log(x);
+      x = document.getElementById("p2").nodeName;
+      console.log(x);
+      x = document.getElementById("h1").nodeType;
+      console.log(x);
+    </script>
+  </body>
+</html>
